@@ -22,6 +22,33 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
   #### **Sendgrid:** 
        To send mail to receipt whenever a negative feedback is generated.
   #### **Affin.txt:** 
-       To compare the text review and assign a sentiment value to the review text.
+       To compare the text review from zomato and assign a sentiment value to the review text.
   #### **Zomato API:** 
        To fetch the ratings and review text for analysis.
+       ref: https://developers.zomato.com/
+
+## Set Up:
+
+  ### **MAC**
+  #### Python shell:
+       Open Terminal -> type 'python' -> Python Shell opens
+  #### Mysql Database:
+       Open New Terminal -> Start Mysql Server -> Switch to root or new user -> Create Database
+  #### Sendgrid:
+       Register Sendgrid -> Generate Sendgrid API Key
+       Install Pip(Python Package Index) -> Using pip install sendgrid
+  #### Zomato API:
+       Register in Zomato Developers -> Generate API KEY
+
+## Commands:
+  
+  ### To Start Mysql Server:
+       cmd: /usr/local/mysql/support-files/mysql.server start
+       switch to user: mysql -u root
+  ### To install pip and sendgrid:
+       cmd: sudo easy_install pip
+       cmd: pip install sendgrid
+       
+       
+              
+       
