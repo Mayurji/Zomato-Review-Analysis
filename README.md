@@ -15,8 +15,13 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
   
 ## Tools Explanation:
   
-  #### **Python Shell:** ##### To write and execute python programs.
-  #### **Mysql Database:** ##### To store the logs to passed from the python program.
-  #### **Sendgrid:** ##### To send mail to receipt whenever a negative feedback is generated.
-  #### **Affin.txt:** ##### To compare the text review and assign a sentiment value to the review text.
-  #### **Zomato API:** ##### To fetch the ratings and review text for analysis.
+  #### **Python Shell:** 
+       To write and execute python programs.
+  #### **Mysql Database:**
+       To store the logs to passed from the python program.
+  #### **Sendgrid:** 
+       To send mail to receipt whenever a negative feedback is generated.
+  #### **Affin.txt:** 
+       To compare the text review and assign a sentiment value to the review text.
+  #### **Zomato API:** 
+       To fetch the ratings and review text for analysis.
