@@ -27,7 +27,10 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
   #### **Zomato API:** 
        To fetch the ratings and review text for analysis.
        ref: https://developers.zomato.com/
-
+  #### **Advance Python Scheduler:**
+       To schedule a python.py execution task at regular interval of time.
+       Its a Python Library to schedule python task.
+       
 ## Set Up:
 
   ### **MAC**
@@ -52,6 +55,8 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
   ### To install pip and sendgrid:
        cmd: sudo easy_install pip
        cmd: pip install sendgrid
+  ### To Install APScheduler:
+       cmd: sudo pip install apsheduler
        
        
               
