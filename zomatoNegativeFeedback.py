@@ -53,6 +53,8 @@ class ZomatoReview(object):
         review_text = [] * 5
         rating_color = [] * 5
         rating_text = [] * 5
+        name = [] * 5
+        profile_url = [] * 5
         InsertIntoSQL('rating, review_text, rating_text, rating_color')
         InsertIntoSQL('Iterating through for loop to fetch each Json Object value and Store it in the list declared previously')
         for userreview in review_data['user_reviews']:
@@ -65,11 +67,15 @@ class ZomatoReview(object):
                 review_text.append(userreview[review]['review_text'])
                 rating_color.append(userreview[review]['rating_color'])
                 rating_text.append(userreview[review]['rating_text'])
+                name.append(userreview[review]['user']['name'])
+                profile_url.append(userreview[review]['user']['profile_url'])
         #print rating
         #print review_text
         #print rating_color
         #print rating_text
         #res_id = 16774318,18387851
+        global name
+        global profile_url
         return rating, review_text, rating_text, rating_color
     InsertIntoSQL('Assigning the Restaurant ID and Calling the function zomato_review()')
     review_list = zomato_review(16774318)
@@ -155,6 +161,8 @@ class ZomatoReview(object):
         InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
         InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
         sg = sendgrid.SendGridAPIClient(apikey='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')
+        userName = 'User Name '
+        profileurl = 'Profile Url of the User '
         data = {
         "personalizations": [
             {
@@ -167,13 +175,17 @@ class ZomatoReview(object):
             }
         ],
         "from": {
-            "email": "mayurachennaiite@gmail.com"
+            "email": "mayur87545@gmail.com"
         },
         "content": [
             {
             "type": "text/plain",
-            "value": "Hello, "
+            "value": "Hello, Please find the negative review received from the user !"
             }
+            #{
+             #"type": "text/plain",
+             #"value": "Please find the negative review received from the user !"
+            #}
         ]
         }
         response = sg.client.mail.send.post(request_body=data)
@@ -185,34 +197,49 @@ class ZomatoReview(object):
         count = 0
         for zR,zRT in zip(status_rating_review,status_rating_text_review):
             if(zR == 'Bad Review' and zRT == 'Bad Review'):
+                Print(zR)
                 sendMail()
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
+                print('The Rating Text is '+str(rating_text[count]))
+                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
                 count += 1
             elif(zR == 'Bad Review' and zRT == 'Neutral Review'):
+                print(zR)
                 sendMail()
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
+                #print('The Rating Text is '+str(rating_text[count]))
+                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
                 count +=1
             elif(zR == 'Bad Review' and zRT == 'Good Review'):
+                Print(zR)
                 sendMail()
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
+                #print('The Rating Text is '+str(rating_text[count]))
+                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
                 count +=1
             elif(zR == 'Neutral Review' and zRT == 'Bad Review'):
                 print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                #print('The Rating Text is '+str(rating_text[count]))
                 count +=1
             elif(zR == 'Neutral Review' and zRT == 'Neutral Review'):
                 print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                #print('The Rating Text is '+str(rating_text[count]))
                 count +=1
             elif(zR == 'Neutral Review' and zRT == 'Good Review'):
                 print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                #print('The Rating Text is '+str(rating_text[count]))
                 count +=1
             elif(zR == 'Good Review' and zRT == 'Bad Review'):
                 print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                #print('The Rating Text is '+str(rating_text[count]))
                 count +=1
             elif(zR == 'Good Review' and zRT == 'Neutral Review'):
                 print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                #print('The Rating Text is '+str(rating_text[count]))
                 count +=1
             elif(zR == 'Good Review' and zRT == 'Good Review'):
                 print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                #print('The Rating Text is '+str(rating_text[count]))
                 count +=1
             else:
                 count +=1
