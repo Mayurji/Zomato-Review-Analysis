@@ -5,4 +5,4 @@ def superProgram():
 
 scheduler = BlockingScheduler()
 scheduler.add_job(superProgram, 'interval', hours=1)
-scheduler.start
+scheduler.start()
