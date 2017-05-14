@@ -33,7 +33,9 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
   #### Python shell:
        Open Terminal -> type 'python' -> Python Shell opens
   #### Mysql Database:
-       Open New Terminal -> Start Mysql Server -> Switch to root or new user -> Create Database Zomato
+       Open New Terminal -> Start Mysql Server -> Switch to root or new user 
+       -> Create Database Zomato
+       -> use Zomato
        -> Create Table ZomatoFeedback(PythonLine VARCHAR(500))
   #### Sendgrid:
        Register Sendgrid -> Generate Sendgrid API Key
