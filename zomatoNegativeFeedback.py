@@ -167,7 +167,7 @@ class ZomatoReview(object):
             }
         ],
         "from": {
-            "email": "mayur87545@gmail.com"
+            "email": "mayurachennaiite@gmail.com"
         },
         "content": [
             {
