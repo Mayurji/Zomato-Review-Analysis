@@ -23,6 +23,7 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
        To send mail to receipt whenever a negative feedback is generated.
   #### **Affin.txt:** 
        To compare the text review from zomato and assign a sentiment value to the review text.
+       Please find "AFFIN.txt" in the repository.
   #### **Zomato API:** 
        To fetch the ratings and review text for analysis.
        ref: https://developers.zomato.com/
