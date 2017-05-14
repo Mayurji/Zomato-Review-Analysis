@@ -14,4 +14,12 @@
     Type zomatoNegativeFeedback.py to run your program!
    
    If it didn't work, make sure your PATH contains the python directory. See [Getting Python.](https://en.wikibooks.org/wiki/Python_Programming/Getting_Python)
+   
+# Linux
+
+    Create a folder on your computer to use for your Python programs, such as ~/pythonpractice, and save your hello.py program in that folder.
+    Open up the terminal program. In KDE, open the main menu and select "Run Command..." to open Konsole. In GNOME, open the main menu, open the Applications folder, open the Accessories folder, and select Terminal.
+    Type cd ~/pythonpractice to change directory to your pythonpractice folder, and hit Enter.
+    Type python ./zomatoNegativeFeedback.py to run your program!
+
 
