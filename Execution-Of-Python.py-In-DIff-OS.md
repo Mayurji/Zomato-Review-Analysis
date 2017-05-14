@@ -12,5 +12,6 @@
     In the Start menu, select "Run...", and type in cmd. This will cause the Windows terminal to open.
     Type cd \pythonpractice to change directory to your pythonpractice folder, and hit Enter.
     Type hello.py to run your program!
-    If it didn't work, make sure your PATH contains the python directory. See [Getting Python.](https://en.wikibooks.org/wiki/Python_Programming/Getting_Python)
+   
+   If it didn't work, make sure your PATH contains the python directory. See [Getting Python.](https://en.wikibooks.org/wiki/Python_Programming/Getting_Python)
 
