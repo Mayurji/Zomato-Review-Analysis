@@ -186,7 +186,7 @@ class ZomatoReview(object):
         }
         response = sg.client.mail.send.post(request_body=data)
         print(str(response.status_code)+' Mail Sent Successfully')
-        print(response.body)
+        print('Response Body \n'+str(response.body))
         print(response.headers)
     def final_review(self):
         #InsertIntoSQL('Defining the Function Final_review,')
