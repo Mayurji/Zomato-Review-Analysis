@@ -57,7 +57,11 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
        cmd: pip install sendgrid
   ### To Install APScheduler:
        cmd: sudo pip install apsheduler
-       
+
+## Note:
+
+  **Sendgrid will block the mail id, if it finds it invalid or spam.** 
+  **Kindly change the mail id in sendmail() function**
        
               
        
