@@ -194,75 +194,84 @@ class ZomatoReview(object):
         InsertIntoSQL('When the compared text matches for the -Bad Review mail is sent- or else we just print the statement as NO Negative Reviews')
         count = 0
         for zR,zRT in zip(status_rating_review,status_rating_text_review):
-            if(zR == 'Bad Review' and zRT == 'Bad Review'):
-                print('Review is '+zR)
-                InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
-                InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
-                sendMail()
-                print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
-                print('The Rating Text is '+str(rating_text[count]))
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
-                print('— — — — — — — — Review Completed — — — — — — — — — —')
-                count += 1
-            elif(zR == 'Bad Review' and zRT == 'Neutral Review'):
-                print('Review is '+zR)
-                InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
-                InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
-                sendMail()
-                print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
-                print('The Rating Text is '+str(rating_text[count]))
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            elif(zR == 'Bad Review' and zRT == 'Good Review'):
-                print('Review is '+zR)
-                InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
-                InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
-                sendMail()
-                print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
-                print('The Rating Text is '+str(rating_text[count]))
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            elif(zR == 'Neutral Review' and zRT == 'Bad Review'):
-                print('Review is '+zR)
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
-                print('The Rating Text is '+str(rating_text[count]))
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            elif(zR == 'Neutral Review' and zRT == 'Neutral Review'):
-                print('Review is '+zR)
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
-                print('The Rating Text is '+str(rating_text[count]))
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            elif(zR == 'Neutral Review' and zRT == 'Good Review'):
-                print('Review is '+zR)
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
-                print('The Rating Text is '+str(rating_text[count]))
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            elif(zR == 'Good Review' and zRT == 'Bad Review'):
-                print('Review is '+zR)
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
-                print('The Rating Text is '+str(rating_text[count]))
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            elif(zR == 'Good Review' and zRT == 'Neutral Review'):
-                print('Review is '+zR)
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
-                print('The Rating Text is '+str(rating_text[count]))
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            elif(zR == 'Good Review' and zRT == 'Good Review'):
-                print('Review is '+zR)
-                print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
-                print('The Rating Text is '+str(rating_text[count]))
-                print('— — — — — — — — Review Completed — — — — — — — — — — —')
-                count +=1
-            else:
-                count +=1
-                print('No Negative Feedback')
+            try:
+                if(zR == 'Bad Review' and zRT == 'Bad Review'):
+                    print('Review is '+zR)
+                    InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
+                    InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
+                    sendMail()
+                    print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
+                    print('— — — — — — — — Review Completed — — — — — — — — — —')
+                    count += 1
+                elif(zR == 'Bad Review' and zRT == 'Neutral Review'):
+                    print('Review is '+zR)
+                    InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
+                    InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
+                    sendMail()
+                    print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                elif(zR == 'Bad Review' and zRT == 'Good Review'):
+                    print('Review is '+zR)
+                    InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
+                    InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
+                    sendMail()
+                    print('User Name '+str(name[count])+' with profile Url '+profile_url[count])
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count])+' of the '+zR)
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                elif(zR == 'Neutral Review' and zRT == 'Bad Review'):
+                    print('Review is '+zR)
+                    InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
+                    InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
+                    sendMail()
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                elif(zR == 'Neutral Review' and zRT == 'Neutral Review'):
+                    print('Review is '+zR)
+                    InsertIntoSQL('Defining the Function sendMail, Assiging the API Key to Variable')
+                    InsertIntoSQL('Using the Inbuilt attributes, to store Mail ID of To and From of user.')
+                    sendMail()
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                elif(zR == 'Neutral Review' and zRT == 'Good Review'):
+                    print('Review is '+zR)
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                elif(zR == 'Good Review' and zRT == 'Bad Review'):
+                    print('Review is '+zR)
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                elif(zR == 'Good Review' and zRT == 'Neutral Review'):
+                    print('Review is '+zR)
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                elif(zR == 'Good Review' and zRT == 'Good Review'):
+                    print('Review is '+zR)
+                    print('The Rating System Review is '+str(ratingValue[count])+' & Sentiment Value is '+str(sentimentValue[count]))
+                    print('The Rating Text is '+str(rating_text[count]))
+                    print('— — — — — — — — Review Completed — — — — — — — — — — —')
+                    count +=1
+                else:
+                    count +=1
+                    print('No Negative Feedback')
+            except valueError:
+                print('Oops!  No Reviews Found !')
 
 
 zoma = ZomatoReview()
