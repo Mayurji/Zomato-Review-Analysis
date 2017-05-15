@@ -64,6 +64,29 @@
        We are scaling down the value of -5 to +5 as -2.5 to +2.5
        At last, We'll compare rating and rating text, then arrive at a Breakpoint to make review Bad or not.
       
-       
+ #### Sending Mail
+ 
+      A Alert in the form of a MAIL is triggered incase of bad review.
+      
+      > Star Based Rating is prefered over Review comments when a decision is taken to make a review
+     BAD or NEUTRAL or GOOD
+      > We compare the "Text" assigned by us to the RATING and RATING Text in the form 'Bad Review','Neutral Review','Good Review'
+      > We'll trigger mail based on the output as follows
+      > BR - BAD REVIEW | NR - NEUTRAL REVIEW | GR - GOOD REVIEW
+      
+            RATING            RATING TEXT
+              BR                   BR
+              BR                   NR
+              BR                   GR
+              ..                   ..
+              
+              ..                   .. 
+              GR                   GR 
+      
+      > For (BR,BR),(BR,NR),(BR,GR) review, We'll trigger mail as we are giving priority to "STAR RATING" !
+      
+      
+     
+ 
  ## Note: Zomato API allows only latest 5 or less than 5 reviews for a restaurant at time.
        
