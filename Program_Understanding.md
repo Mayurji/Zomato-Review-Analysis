@@ -83,7 +83,7 @@
               ..                   .. 
               GR                   GR 
       
-      > For (BR,BR),(BR,NR),(BR,GR) review, We'll trigger mail as we are giving priority to "STAR RATING" !
+      > For (BR,BR),(BR,NR),(BR,GR),(NR,BR),(NR,NR) review, We'll trigger mail as we are giving priority to "STAR RATING" !
       
       
      
