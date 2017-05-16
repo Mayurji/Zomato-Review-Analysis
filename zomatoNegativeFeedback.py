@@ -42,7 +42,7 @@ class ZomatoReview(object):
         InsertIntoSQL('Assign Zomato Developer URL in Function zomato_review()')
         Zomato_url = 'https://developers.zomato.com/api/v2.1/reviews?res_id='+str(res_id)
         InsertIntoSQL('Assign Zomato URL Header with API KEY in Function zomato_review()')
-        headers = {'user-key':'9da6a6b0c48bf3929eca72380659bfb5','Accept':'application/json'}
+        headers = {'user-key':'9da6a6b0c48bf3929ecaxxxxxxxxxxxx','Accept':'application/json'}
         InsertIntoSQL('Assign Zomato URL with Header to Form Request Url in zomato_review()')
         request = urllib2.Request(Zomato_url,None,headers)
         InsertIntoSQL('Assign request urls response')
@@ -160,7 +160,7 @@ class ZomatoReview(object):
         InsertIntoSQL('Split the text with words and assigning the value for each word from -5 to +5')
         InsertIntoSQL('assiging value to word is done by affin.txt where the word is compared assigns itself a value.')
     def sendMail():
-        sg = sendgrid.SendGridAPIClient(apikey='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')
+        sg = sendgrid.SendGridAPIClient(apikey='SG.82nZPqHvSRy26dR-kBYTIg.1qxBWLjobvYQ7u0G9ZXXXXXXXXXXXXXXX')
         userName = 'User Name '
         profileurl = 'Profile Url of the User '
         data = {
