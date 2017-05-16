@@ -18,7 +18,7 @@ Assuming as a working employee of Restaurant registered in Zomato, Employee shou
   #### **Python Shell:** 
        To write and execute python programs.
   #### **Mysql Database:**
-       To store the logs to passed from the python program.
+       To store the logs that are passed from the python program.
   #### **Sendgrid:** 
        To send mail to receipt whenever a negative feedback is generated.
   #### **Affin.txt:** 
