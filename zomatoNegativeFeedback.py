@@ -1,6 +1,7 @@
 import urllib2
 import json
 import math
+import os
 import re
 import sys
 import imp
@@ -38,7 +39,7 @@ class ZomatoReview(object):
     #status_rating_review = [] * 5
     #status_rating_text_review = [] * 5
     def zomato_review(res_id):
-        #api_key = '9da6a6b0c48bf3929eca72380659bfb5'
+        
         InsertIntoSQL('Assign Zomato Developer URL in Function zomato_review()')
         Zomato_url = 'https://developers.zomato.com/api/v2.1/reviews?res_id='+str(res_id)
         InsertIntoSQL('Assign Zomato URL Header with API KEY in Function zomato_review()')
@@ -160,7 +161,7 @@ class ZomatoReview(object):
         InsertIntoSQL('Split the text with words and assigning the value for each word from -5 to +5')
         InsertIntoSQL('assiging value to word is done by affin.txt where the word is compared assigns itself a value.')
     def sendMail():
-        sg = sendgrid.SendGridAPIClient(apikey='SG.82nZPqHvSRy26dR-kBYTIg.1qxBWLjobvYQ7u0G9ZXXXXXXXXXXXXXXX')
+        sg = sendgrid.SendGridAPIClient(apikey=os.getenv('API_KEY'))
         userName = 'User Name '
         profileurl = 'Profile Url of the User '
         data = {
@@ -168,14 +169,14 @@ class ZomatoReview(object):
             {
             "to": [
                 {
-                    "email": "mayurachennaiite@gmail.com"
+                    "email": os.getenv('MAIL_ID_1')
                 }
             ],
             "subject": "NEGATIVE FEEDBACK DETECTED!"
             }
         ],
         "from": {
-            "email": "mayur87545@gmail.com"
+            "email": os.getenv('MAIL_ID_2')
         },
         "content": [
             {
